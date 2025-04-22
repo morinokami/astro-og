@@ -23,6 +23,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
+		"@types/node": "22.14.1",
 		"astro": "5.7.4",
 		"typescript": "5.8.3",
 		"unbuild": "3.5.0"
