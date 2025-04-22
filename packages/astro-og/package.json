@@ -1,14 +1,14 @@
 {
-	"name": "astro-integration",
-	"description": "Astro integration",
+	"name": "astro-og",
+	"description": "TODO:",
 	"version": "0.0.1",
 	"type": "module",
 	"author": "Shinya Fujino <shf0811@gmail.com> (https://github.com/morinokami)",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/morinokami/astro-integration-template.git",
-		"directory": "packages/astro-integration"
+		"url": "https://github.com/morinokami/astro-og.git",
+		"directory": "packages/astro-og"
 	},
 	"keywords": ["astro", "withastro", "astro-component", "astro-integration"],
 	"exports": {
