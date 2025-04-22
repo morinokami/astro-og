@@ -1,0 +1,20 @@
+{
+	"name": "astro-integration-template",
+	"version": "0.0.0",
+	"type": "module",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/morinokami/astro-integration-template.git"
+	},
+	"workspaces": ["packages/astro-integration", "playground"],
+	"scripts": {
+		"dev": "bun run --cwd playground dev",
+		"biome:ci": "biome ci packages/astro-integration/src",
+		"typecheck": "bun run --cwd packages/astro-integration typecheck",
+		"build": "bun run --cwd packages/astro-integration build"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4"
+	}
+}
