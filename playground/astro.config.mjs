@@ -1,7 +1,8 @@
-import og from 'astro-og';
-import { defineConfig } from 'astro/config';
+import showcase from "astro-dev-toolbar-showcase";
+import og from "astro-og";
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [og()],
+	integrations: [showcase(), og()],
 });
