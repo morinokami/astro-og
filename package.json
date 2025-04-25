@@ -15,6 +15,7 @@
 		"build": "bun run --cwd packages/astro-og build"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4"
+		"@biomejs/biome": "1.9.4",
+		"pkg-pr-new": "0.0.43"
 	}
 }
