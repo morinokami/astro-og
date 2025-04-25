@@ -52,6 +52,24 @@ export default defineToolbarApp({
 
 		appendHr(windowElement);
 
+		const preview = document.createElement("p");
+		preview.textContent = "TODO: Preview";
+		windowElement.appendChild(preview);
+
+		appendHr(windowElement);
+
+		const section = document.createElement("section");
+		const fieldTitle = document.createElement("h2");
+		fieldTitle.textContent = "title";
+		const fieldDescription = document.createElement("p");
+		fieldDescription.textContent =
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		section.appendChild(fieldTitle);
+		section.appendChild(fieldDescription);
+		windowElement.appendChild(section);
+
+		appendHr(windowElement);
+
 		canvas.appendChild(windowElement);
 	},
 }) satisfies DevToolbarApp;
