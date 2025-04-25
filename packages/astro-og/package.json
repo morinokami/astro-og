@@ -1,16 +1,19 @@
 {
 	"name": "astro-og",
-	"description": "TODO:",
 	"version": "0.0.1",
-	"type": "module",
+	"description": "TODO:",
+	"keywords": ["astro", "withastro", "astro-component", "astro-integration"],
 	"author": "Shinya Fujino <shf0811@gmail.com> (https://github.com/morinokami)",
 	"license": "MIT",
+	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/morinokami/astro-og.git",
+		"url": "git+https://github.com/morinokami/astro-og.git",
 		"directory": "packages/astro-og"
 	},
-	"keywords": ["astro", "withastro", "astro-component", "astro-integration"],
+	"bugs": {
+		"url": "https://github.com/morinokami/astro-og/issues"
+	},
 	"exports": {
 		".": "./dist/index.mjs"
 	},
@@ -25,6 +28,7 @@
 	"devDependencies": {
 		"@types/node": "22.14.1",
 		"astro": "5.7.4",
+		"publint": "0.3.12",
 		"typescript": "5.8.3",
 		"unbuild": "3.5.0"
 	},

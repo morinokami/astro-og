@@ -1,8 +1,7 @@
 {
-	"name": "astro-og-root",
-	"version": "0.0.0",
-	"type": "module",
 	"private": true,
+	"name": "astro-og-root",
+	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/morinokami/astro-og.git"
@@ -12,7 +11,8 @@
 		"dev": "bun run --cwd playground dev",
 		"biome:ci": "biome ci packages/astro-og/src",
 		"typecheck": "bun run --cwd packages/astro-og typecheck",
-		"build": "bun run --cwd packages/astro-og build"
+		"build": "bun run --cwd packages/astro-og build",
+		"publint": "bun run --cwd packages/astro-og publint"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
