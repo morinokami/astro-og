@@ -66,13 +66,12 @@ export default defineToolbarApp({
 
 			// render preview
 			const previewElement = renderTwitterPreview(
-				meta.twitter?.card ?? "summary",
+				meta.twitter?.card,
 				meta.twitter?.image ?? meta.openGraph?.image,
 				meta.twitter?.title ?? meta.openGraph?.title ?? meta.title,
 			);
 			windowElement.appendChild(previewElement);
 			appendHr(windowElement);
-			// TODO: render no preview component if props are not set
 
 			// render props
 			appendPropField(windowElement, "twitter:image", meta.twitter?.image);
