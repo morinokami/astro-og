@@ -11,7 +11,7 @@ export default defineToolbarApp({
 		document.addEventListener("astro:after-swap", createWindow);
 
 		function createWindow() {
-			const og = parse(document.head.innerHTML);
+			const meta = parse(document.head.innerHTML);
 
 			const windowElement = document.createElement("astro-dev-toolbar-window");
 			windowElement.style.overflow = "auto";
@@ -65,12 +65,11 @@ export default defineToolbarApp({
 			// TODO: render tabs for selecting a service
 
 			// render preview
-			// TODO: fallback to open graph if twitter is not set
-			if (og.twitter?.image && og.twitter?.title) {
+			if (meta.twitter?.image && meta.openGraph?.image) {
 				const previewElement = renderTwitterPreview(
-					og.twitter?.card ?? "summary",
-					og.twitter?.image,
-					og.twitter?.title,
+					meta.twitter?.card ?? "summary",
+					meta.twitter?.image ?? meta.openGraph?.image,
+					meta.twitter?.title ?? meta.openGraph?.title ?? meta.title,
 				);
 				windowElement.appendChild(previewElement);
 				appendHr(windowElement);
@@ -78,35 +77,35 @@ export default defineToolbarApp({
 			// TODO: render no preview component if props are not set
 
 			// render props
-			appendPropField(windowElement, "twitter:image", og.twitter?.image);
+			appendPropField(windowElement, "twitter:image", meta.twitter?.image);
 			appendHr(windowElement);
-			appendPropField(windowElement, "twitter:card", og.twitter?.card);
+			appendPropField(windowElement, "twitter:card", meta.twitter?.card);
 			appendHr(windowElement);
-			appendPropField(windowElement, "twitter:title", og.twitter?.title);
+			appendPropField(windowElement, "twitter:title", meta.twitter?.title);
 			appendHr(windowElement);
 			appendPropField(
 				windowElement,
 				"twitter:description",
-				og.twitter?.description,
+				meta.twitter?.description,
 			);
 			appendHr(windowElement);
-			appendPropField(windowElement, "title", og.title);
+			appendPropField(windowElement, "title", meta.title);
 			appendHr(windowElement);
-			appendPropField(windowElement, "description", og.description);
+			appendPropField(windowElement, "description", meta.description);
 			appendHr(windowElement);
-			appendPropField(windowElement, "og:image", og.openGraph?.image);
+			appendPropField(windowElement, "og:image", meta.openGraph?.image);
 			appendHr(windowElement);
-			appendPropField(windowElement, "og:site_name", og.openGraph?.siteName);
+			appendPropField(windowElement, "og:site_name", meta.openGraph?.siteName);
 			appendHr(windowElement);
-			appendPropField(windowElement, "og:title", og.openGraph?.title);
+			appendPropField(windowElement, "og:title", meta.openGraph?.title);
 			appendHr(windowElement);
 			appendPropField(
 				windowElement,
 				"og:description",
-				og.openGraph?.description,
+				meta.openGraph?.description,
 			);
 			appendHr(windowElement);
-			appendPropField(windowElement, "og:url", og.openGraph?.url);
+			appendPropField(windowElement, "og:url", meta.openGraph?.url);
 
 			canvas.appendChild(windowElement);
 		}

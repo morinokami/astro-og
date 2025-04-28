@@ -62,12 +62,16 @@ export function parse(html: string): Metadata {
 }
 
 export function renderTwitterPreview(
-	// biome-ignore lint/correctness/noUnusedVariables:
 	cardType: "summary" | "summary_large_image",
 	image: string,
-	title: string,
+	title?: string,
 ): HTMLDivElement {
-	// TODO: summary type
+	if (cardType === "summary" || image === undefined) {
+		// if image is not provided, fallback to summary card
+		const previewContainer = document.createElement("div");
+		previewContainer.textContent = "TODO: summary";
+		return previewContainer;
+	}
 
 	const previewContainer = document.createElement("div");
 	previewContainer.style.width = "100%";
@@ -111,7 +115,7 @@ export function renderTwitterPreview(
 	previewTitle.style.userSelect = "none";
 	previewTitle.style.whiteSpace = "nowrap";
 	previewTitle.style.width = "fit-content";
-	previewTitle.textContent = title;
+	previewTitle.textContent = title ?? "Title not provided";
 
 	titleContainer.appendChild(previewTitle);
 	previewImageWrapper.appendChild(previewImage);
