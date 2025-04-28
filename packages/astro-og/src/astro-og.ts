@@ -65,15 +65,13 @@ export default defineToolbarApp({
 			// TODO: render tabs for selecting a service
 
 			// render preview
-			if (meta.twitter?.image && meta.openGraph?.image) {
-				const previewElement = renderTwitterPreview(
-					meta.twitter?.card ?? "summary",
-					meta.twitter?.image ?? meta.openGraph?.image,
-					meta.twitter?.title ?? meta.openGraph?.title ?? meta.title,
-				);
-				windowElement.appendChild(previewElement);
-				appendHr(windowElement);
-			}
+			const previewElement = renderTwitterPreview(
+				meta.twitter?.card ?? "summary",
+				meta.twitter?.image ?? meta.openGraph?.image,
+				meta.twitter?.title ?? meta.openGraph?.title ?? meta.title,
+			);
+			windowElement.appendChild(previewElement);
+			appendHr(windowElement);
 			// TODO: render no preview component if props are not set
 
 			// render props

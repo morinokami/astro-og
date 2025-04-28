@@ -63,7 +63,7 @@ export function parse(html: string): Metadata {
 
 export function renderTwitterPreview(
 	cardType: "summary" | "summary_large_image",
-	image: string,
+	image?: string,
 	title?: string,
 ): HTMLDivElement {
 	if (cardType === "summary" || image === undefined) {
