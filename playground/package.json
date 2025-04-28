@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "5.7.4",
+    "astro": "5.7.7",
     "astro-og": "workspace:*"
   }
 }
