@@ -123,7 +123,20 @@ function appendPropField(
 ) {
 	const section = document.createElement("section");
 	const fieldTitle = document.createElement("h2");
-	fieldTitle.textContent = prop;
+	fieldTitle.style.display = "flex";
+	fieldTitle.style.alignItems = "center";
+	if (value) {
+		fieldTitle.textContent = prop;
+	} else {
+		const warningIcon = document.createElement("astro-dev-toolbar-icon");
+		warningIcon.icon = "warning";
+		warningIcon.style.color = "#ff9f1c";
+		warningIcon.style.marginRight = "4px";
+		warningIcon.style.width = "16px";
+		warningIcon.style.height = "16px";
+		fieldTitle.appendChild(warningIcon);
+		fieldTitle.appendChild(document.createTextNode(prop));
+	}
 	const fieldDescription = document.createElement("p");
 	if (
 		isValidUrl(value ?? "") &&
