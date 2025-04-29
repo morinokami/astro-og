@@ -36,20 +36,22 @@ export default defineToolbarApp({
         margin: 0px 0px 8px;
       }
 
-      label {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 14px;
-        line-height: 1.5rem;
-      }
-
       p {
         margin: 0px;
       }
 
+      code {
+        color: rgba(224, 204, 250, 1);
+        border-color: #343841;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: .4em;
+        background-color: #24262D;
+        padding: .3em;
+      }
+
       a, a:visited {
-        color: rgb(9, 105, 218);
+        color: rgba(224, 204, 250, 1);
       }
     `;
 			windowElement.appendChild(style);
@@ -123,8 +125,25 @@ function appendPropField(
 	const fieldTitle = document.createElement("h2");
 	fieldTitle.textContent = prop;
 	const fieldDescription = document.createElement("p");
-	fieldDescription.textContent = value ?? "No value found";
+	if (
+		isValidUrl(value ?? "") &&
+		(prop === "twitter:image" || prop === "og:image" || prop === "og:url")
+	) {
+		fieldDescription.innerHTML = `<a href="${value}" target="_blank">${value}</a>`;
+	} else {
+		fieldDescription.textContent = value ?? "Not provided";
+	}
+	fieldDescription.style.fontSize = "14px";
 	section.appendChild(fieldTitle);
 	section.appendChild(fieldDescription);
 	windowElement.appendChild(section);
+}
+
+function isValidUrl(value: string) {
+	try {
+		new URL(value);
+		return true;
+	} catch (_error) {
+		return false;
+	}
 }

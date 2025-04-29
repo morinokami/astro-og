@@ -94,10 +94,13 @@ export function renderTwitterPreview(
 		noPreview.style.textAlign = "center";
 		noPreview.style.color = "#71767b";
 		const noPreviewDescription = document.createElement("p");
-		noPreviewDescription.textContent =
-			"Property twitter:card is required. Must be one of summary, summary_large_image, app or player.";
-		noPreviewDescription.style.textAlign = "center";
-		noPreviewDescription.style.marginTop = "12px";
+		noPreviewDescription.innerHTML =
+			"Property <code>twitter:card</code> is required. Must be one of <code>summary</code>, <code>summary_large_image</code>, <code>app</code> or <code>player</code>.";
+		noPreviewDescription.style.textAlign = "start";
+		noPreviewDescription.style.marginTop = "16px";
+		noPreviewDescription.style.lineHeight = "2.2";
+		noPreviewDescription.style.maxWidth = "380px";
+		noPreviewDescription.style.fontSize = "14px";
 
 		noPreviewWrapper.appendChild(warningIcon);
 		noPreviewWrapper.appendChild(noPreview);
