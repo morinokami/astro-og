@@ -2,10 +2,10 @@ import type { DevToolbarApp } from "astro";
 import type { DevToolbarWindow } from "astro/runtime/client/dev-toolbar/ui-library/window.js";
 import { defineToolbarApp } from "astro/toolbar";
 
-import { parse, renderTwitterPreview } from "./utils";
+import { closeOnOutsideClick, parse, renderTwitterPreview } from "./utils";
 
 export default defineToolbarApp({
-	init(canvas) {
+	init(canvas, eventTarget) {
 		createWindow();
 
 		document.addEventListener("astro:after-swap", createWindow);
@@ -107,6 +107,8 @@ export default defineToolbarApp({
 			appendPropField(windowElement, "og:url", meta.openGraph?.url);
 
 			canvas.appendChild(windowElement);
+
+			closeOnOutsideClick(eventTarget);
 		}
 	},
 }) satisfies DevToolbarApp;
