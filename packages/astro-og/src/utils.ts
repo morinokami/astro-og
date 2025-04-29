@@ -74,9 +74,38 @@ export function renderTwitterPreview(
 
 	if (cardType === undefined) {
 		const preview = document.createElement("div");
-		preview.textContent = "TODO: no preview";
+		preview.style.display = "flex";
+		preview.style.flexDirection = "column";
+		preview.style.justifyContent = "center";
+		preview.style.alignItems = "center";
+		preview.style.height = "100%";
+		preview.style.width = "100%";
+		const noPreviewWrapper = document.createElement("div");
+		noPreviewWrapper.style.display = "flex";
+		noPreviewWrapper.style.alignItems = "center";
+		const warningIcon = document.createElement("astro-dev-toolbar-icon");
+		warningIcon.icon = "warning";
+		warningIcon.style.color = "#ff9f1c";
+		warningIcon.style.marginRight = "4px";
+		warningIcon.style.width = "16px";
+		warningIcon.style.height = "16px";
+		const noPreview = document.createElement("p");
+		noPreview.textContent = "No preview available";
+		noPreview.style.textAlign = "center";
+		noPreview.style.color = "#71767b";
+		const noPreviewDescription = document.createElement("p");
+		noPreviewDescription.textContent =
+			"Property twitter:card is required. Must be one of summary, summary_large_image, app or player.";
+		noPreviewDescription.style.textAlign = "center";
+		noPreviewDescription.style.marginTop = "12px";
+
+		noPreviewWrapper.appendChild(warningIcon);
+		noPreviewWrapper.appendChild(noPreview);
+		preview.appendChild(noPreviewWrapper);
+		preview.appendChild(noPreviewDescription);
 		previewWrapper.appendChild(preview);
 		previewContainer.appendChild(previewWrapper);
+
 		return previewContainer;
 	}
 
