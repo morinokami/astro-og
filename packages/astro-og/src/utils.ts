@@ -250,7 +250,6 @@ export function renderTwitterPreview(
 export function closeOnOutsideClick(eventTarget: EventTarget) {
 	function onPageClick(event: MouseEvent) {
 		const target = event.target as Element | null;
-		console.log(target);
 		if (!target) return;
 		if (!target.closest) return;
 		if (target.closest("astro-dev-toolbar")) return;
