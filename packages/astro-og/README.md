@@ -1,4 +1,4 @@
-# Astro OG
+# Astro Open Graph
 
 <p align="center">
   <img src="./.github/assets/screenshot.png" alt="Screenshot" width="657" />
