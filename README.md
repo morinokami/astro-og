@@ -1,1 +1,1 @@
-packages/astro-integration/README.md
+packages/astro-og/README.md

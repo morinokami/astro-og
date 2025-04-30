@@ -1,31 +1,42 @@
 {
 	"name": "astro-og",
-	"description": "TODO:",
 	"version": "0.0.1",
-	"type": "module",
+	"description": "TODO:",
+	"keywords": ["astro", "withastro", "astro-component", "astro-integration"],
 	"author": "Shinya Fujino <shf0811@gmail.com> (https://github.com/morinokami)",
 	"license": "MIT",
+	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/morinokami/astro-og.git",
+		"url": "git+https://github.com/morinokami/astro-og.git",
 		"directory": "packages/astro-og"
 	},
-	"keywords": ["astro", "withastro", "astro-component", "astro-integration"],
-	"exports": {
-		".": "./dist/index.mjs"
+	"bugs": {
+		"url": "https://github.com/morinokami/astro-og/issues"
 	},
-	"main": "./dist/index.mjs",
-	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.mts",
+	"exports": {
+		".": "./dist/index.js"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"files": ["dist"],
 	"scripts": {
-		"build": "unbuild",
+		"build": "tsdown",
 		"typecheck": "tsc --noEmit"
 	},
+	"dependencies": {
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
+	},
 	"devDependencies": {
+		"@types/node": "22.14.1",
+		"@types/react": "19.1.2",
+		"@types/react-dom": "19.1.2",
 		"astro": "5.7.4",
-		"typescript": "5.8.3",
-		"unbuild": "3.5.0"
+		"publint": "0.3.12",
+		"tsdown": "0.9.8",
+		"typescript": "5.8.3"
 	},
 	"peerDependencies": {
 		"astro": ">=5.0.0"

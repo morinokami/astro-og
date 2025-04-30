@@ -1,22 +1,37 @@
-# astro-integration-template
+# Astro Open Graph
 
-This is my opinionated template for creating Astro [integrations](https://docs.astro.build/en/reference/integrations-reference/), aimed at the best DX possible.
-It's primarily designed for my personal use, but I've made it accessible for anyone interested.
-The template comes with:
+<p align="center">
+  <img src="./.github/assets/screenshot.png" alt="Screenshot" width="657" />
+</p>
 
-- [Bun](https://bun.sh/) for installing dependencies and managing a workspace.
-- [Biome](https://biomejs.dev/) for linting and formatting.
-- [GitHub Actions](https://docs.github.com/en/actions) for CI.
-<!-- - [Dependabot version updates](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates) for automatically keeping dependencies up to date. -->
+[Astro dev toolbar app](https://docs.astro.build/en/reference/dev-toolbar-app-reference/) that shows a preview of how the page will look like when shared on various social media platforms and helps you inspect [open graph](https://ogp.me/#metadata) properties. It's heavily inspired by [Vercel Toolbar](https://docs.astro.build/en/reference/dev-toolbar-app-reference/).
 
-## Setup
+> [!NOTE]
+> Currently, it only supports X (Twitter). Support for other platforms will be added in the future.
 
-1. Create a new repository using this template.
-2. Clone the repository to your local machine.
-3. Install [Bun](https://bun.sh/) if you haven't already.
-4. Run `bun install` in the root of the repository to install the dependencies.
-5. Open `TODO.md` and follow the instructions.
+## Installation
 
-## Project Structure
+```sh
+npx astro add astro-og
+```
 
-TODO
+### Manual Installation
+
+First, install the `astro-og` package:
+
+```sh
+npm install -D astro-og
+```
+
+Then, add the `astro-og` integration to your Astro config:
+
+```ts
+import { defineConfig } from "astro/config";
+
+import og from "astro-og";
+
+export default defineConfig({
+  integrations: [og()],
+});
+```
+
