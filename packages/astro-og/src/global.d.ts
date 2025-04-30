@@ -1,16 +1,12 @@
-import type React from "react";
+import type preact from "preact";
 
-declare module "react/jsx-runtime" {
+declare module "preact" {
 	namespace JSX {
 		interface IntrinsicElements {
-			"astro-dev-toolbar-window": React.DetailedHTMLProps<
-				React.HTMLAttributes<HTMLElement>,
-				HTMLElement
-			>;
-			"astro-dev-toolbar-icon": React.DetailedHTMLProps<
-				React.HTMLAttributes<HTMLElement> & { icon?: string },
-				HTMLElement
-			>;
+			"astro-dev-toolbar-window": preact.JSX.HTMLAttributes<HTMLElement>;
+			"astro-dev-toolbar-icon": preact.JSX.HTMLAttributes<HTMLElement> & {
+				icon?: string;
+			};
 		}
 	}
 }
