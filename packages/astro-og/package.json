@@ -26,13 +26,10 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"react": "19.1.0",
-		"react-dom": "19.1.0"
+		"preact": "10.26.5"
 	},
 	"devDependencies": {
 		"@types/node": "22.15.3",
-		"@types/react": "19.1.2",
-		"@types/react-dom": "19.1.2",
 		"astro": "5.7.9",
 		"publint": "0.3.12",
 		"tsdown": "0.10.2",

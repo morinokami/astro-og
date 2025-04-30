@@ -1,7 +1,7 @@
-import type React from "react";
+import type preact from "preact";
 
 interface PreviewContainerProps {
-	children: React.ReactNode;
+	children: preact.JSX.Element;
 }
 
 export function PreviewContainer({ children }: PreviewContainerProps) {

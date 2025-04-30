@@ -1,7 +1,6 @@
 import type { DevToolbarApp } from "astro";
 import { defineToolbarApp } from "astro/toolbar";
-import React from "react";
-import { createRoot } from "react-dom/client";
+import { Fragment, render } from "preact";
 
 import { NoPreview } from "./components/no-preview";
 import { PreviewSummary } from "./components/preview-summary";
@@ -39,8 +38,8 @@ export default defineToolbarApp({
 				"og:url": meta.openGraph?.url,
 			};
 
-			const root = createRoot(canvas);
-			root.render(
+			// const root = createRoot(canvas);
+			render(
 				<astro-dev-toolbar-window style={{ overflow: "auto" }}>
 					<style>
 						{`
@@ -100,12 +99,13 @@ export default defineToolbarApp({
 					)}
 
 					{Object.entries(props).map(([key, value]) => (
-						<React.Fragment key={key}>
+						<Fragment key={key}>
 							<hr />
 							<PropField prop={key} value={value} />
-						</React.Fragment>
+						</Fragment>
 					))}
 				</astro-dev-toolbar-window>,
+				canvas,
 			);
 
 			closeOnOutsideClick(eventTarget);
