@@ -1,9 +1,9 @@
 import { defineConfig } from "tsdown";
 
 export default defineConfig({
-	entry: ["./src/index.ts", "src/astro-og.ts"],
+	entry: ["./src/index.ts", "src/astro-og.tsx"],
 	format: ["esm"],
 	dts: true,
 	clean: true,
-	minify: true,
+	// minify: true,
 });
