@@ -4,7 +4,7 @@
   <img src="./.github/assets/screenshot.png" alt="Screenshot" width="657" />
 </p>
 
-[Astro dev toolbar app](https://docs.astro.build/en/reference/dev-toolbar-app-reference/) that shows a preview of how the page will look like when shared on various social media platforms and helps you inspect [open graph](https://ogp.me/#metadata) properties. It's heavily inspired by [Vercel Toolbar](https://docs.astro.build/en/reference/dev-toolbar-app-reference/).
+[Astro dev toolbar app](https://docs.astro.build/en/reference/dev-toolbar-app-reference/) that shows a preview of how the page will look when shared on various social media platforms and helps you inspect the page's [open graph](https://ogp.me/#metadata) properties. This project is heavily inspired by [Vercel Toolbar](https://docs.astro.build/en/reference/dev-toolbar-app-reference/).
 
 > [!NOTE]
 > Currently, it only supports X (Twitter). Support for other platforms will be added in the future.

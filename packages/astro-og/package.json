@@ -1,7 +1,7 @@
 {
 	"name": "astro-og",
 	"version": "0.0.1",
-	"description": "TODO:",
+	"description": "Astro dev toolbar app that shows a preview of how the page will look when shared on various social media platforms and helps you inspect the page's open graph properties.",
 	"keywords": ["astro", "withastro", "astro-component", "astro-integration"],
 	"author": "Shinya Fujino <shf0811@gmail.com> (https://github.com/morinokami)",
 	"license": "MIT",
