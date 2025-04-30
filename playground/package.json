@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "5.7.4",
+    "astro": "5.7.9",
     "astro-dev-toolbar-showcase": "0.0.1",
     "astro-mcp": "0.3.1",
     "astro-og": "workspace:*"
