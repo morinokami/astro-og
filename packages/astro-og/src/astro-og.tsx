@@ -21,6 +21,10 @@ export default defineToolbarApp({
 			const cardType = meta.twitter?.card;
 			const image = meta.twitter?.image ?? meta.openGraph?.image;
 			const title = meta.twitter?.title ?? meta.openGraph?.title ?? meta.title;
+			const description =
+				meta.twitter?.description ??
+				meta.openGraph?.description ??
+				meta.description;
 			const props = {
 				"twitter:image": meta.twitter?.image,
 				"twitter:card": meta.twitter?.card,
@@ -86,7 +90,11 @@ export default defineToolbarApp({
 					{cardType === undefined ? (
 						<NoPreview />
 					) : cardType === "summary" || image === undefined ? (
-						<PreviewSummary image={image} title={title} />
+						<PreviewSummary
+							image={image}
+							title={title}
+							description={description}
+						/>
 					) : (
 						<PreviewSummaryLargeImage image={image} title={title} />
 					)}

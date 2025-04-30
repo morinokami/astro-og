@@ -33,7 +33,7 @@ export function PropField({ prop, value }: PropFieldProps) {
 						{value}
 					</a>
 				) : (
-					"Not provided"
+					(value ?? "Not provided")
 				)}
 			</p>
 		</section>
