@@ -38,7 +38,6 @@ export default defineToolbarApp({
 				"og:url": meta.openGraph?.url,
 			};
 
-			// const root = createRoot(canvas);
 			render(
 				<astro-dev-toolbar-window style={{ overflow: "auto" }}>
 					<style>
