@@ -1,6 +1,0 @@
-- [ ] Rename `packages/astro-integration` directory to your integration's name.
-- [ ] Update `README.md`s in the root and `packages/astro-integration` directories.
-- [ ] Update `package.json`s in the root, `packages/astro-integration`, and `playground` directories.
-- [ ] Update `playground/astro.config.mjs` to include your integration.
-- [ ] (Optional) Setup [changesets](https://github.com/changesets/changesets) for versioning.
-- [ ] Delete `TODO.md` (this file).
