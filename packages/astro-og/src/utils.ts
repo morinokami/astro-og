@@ -21,3 +21,14 @@ export function closeOnOutsideClick(eventTarget: EventTarget) {
 		}
 	});
 }
+
+export function isValidUrl(value?: string): value is string {
+	if (!value) return false;
+
+	try {
+		new URL(value);
+		return true;
+	} catch (_error) {
+		return false;
+	}
+}

@@ -1,6 +1,7 @@
 import { useState } from "preact/hooks";
 
 import { Fragment } from "preact/jsx-runtime";
+import { BlueskyPreview } from "./components/bluesky/bluesky-preview";
 import { DiscordPreview } from "./components/discord/discord-preview";
 import { PropField } from "./components/prop-field";
 import { type Platform, Tabs } from "./components/tabs";
@@ -61,12 +62,14 @@ export function App({ props }: AppProps) {
 							.tab-item {
 								background: rgb(19, 21, 26);
 								color: rgb(161, 161, 161);
+								margin: 0px 2px;
 								padding: 8px 12px;
 								display: flex;
 								align-items: center;
 								justify-content: center;
 								cursor: pointer;
 								border: none;
+								transition: color .2s;
 							}
 							.tab-item.selected {
 								background: rgba(71, 78, 94, 1);
@@ -90,9 +93,11 @@ export function App({ props }: AppProps) {
 
 			{selectedPlatform === "X" ? (
 				<XPreview props={props} />
-			) : (
+			) : selectedPlatform === "Bluesky" ? (
+				<BlueskyPreview props={props} />
+			) : selectedPlatform === "Discord" ? (
 				<DiscordPreview props={props} />
-			)}
+			) : null}
 
 			{Object.entries(props).map(([key, value]) => {
 				if (selectedPlatform !== "X" && key.startsWith("twitter:")) {

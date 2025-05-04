@@ -1,3 +1,5 @@
+import { isValidUrl } from "../utils";
+
 interface PropFieldProps {
 	prop: string;
 	value?: string;
@@ -38,13 +40,4 @@ export function PropField({ prop, value }: PropFieldProps) {
 			</p>
 		</section>
 	);
-}
-
-function isValidUrl(value: string) {
-	try {
-		new URL(value);
-		return true;
-	} catch (_error) {
-		return false;
-	}
 }

@@ -1,3 +1,5 @@
+// TODO: Add "From: https://example.com" below the image
+
 interface PreviewSummaryLargeImageProps {
 	image: string;
 	title?: string;
