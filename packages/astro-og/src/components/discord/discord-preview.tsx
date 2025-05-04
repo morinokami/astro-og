@@ -13,7 +13,12 @@ export function DiscordPreview({ props }: DiscordPreviewProps) {
 
 	return (
 		<PreviewContainer>
-			<div style={{ display: "flex" }}>
+			<div
+				id="panel-Discord"
+				role="tabpanel"
+				aria-labelledby="tab-Discord"
+				style={{ display: "flex" }}
+			>
 				<div
 					style={{
 						background: "oklab(0.35016 0.00197881 -0.0119994)",

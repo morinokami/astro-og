@@ -11,6 +11,8 @@ export function Tabs({ selectedPlatform, onSelect }: TabsProps) {
 	return (
 		<div
 			role="tablist"
+			aria-label="Platforms"
+			aria-orientation="horizontal"
 			style={{
 				marginTop: "8px",
 				display: "flex",
@@ -77,10 +79,13 @@ function TabItem({
 }) {
 	return (
 		<button
+			id={`tab-${platform}`}
 			className={`tab-item ${selected ? "selected" : ""}`}
 			type="button"
 			role="tab"
 			aria-selected={selected}
+			aria-controls={`panel-${platform}`}
+			tabIndex={selected ? 0 : -1}
 			onClick={() => {
 				onSelect(platform);
 			}}

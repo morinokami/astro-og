@@ -1,5 +1,3 @@
-import { PreviewContainer } from "../preview-container";
-
 interface PreviewSummaryLargeImageProps {
 	image: string;
 	title?: string;
@@ -10,66 +8,67 @@ export function PreviewSummaryLargeImage({
 	title,
 }: PreviewSummaryLargeImageProps) {
 	return (
-		<PreviewContainer>
+		<div
+			id="panel-X"
+			role="tabpanel"
+			aria-labelledby="tab-X"
+			style={{
+				background: "#13151a",
+				border: "1px solid #2f3336",
+				borderRadius: "16px",
+				overflow: "hidden",
+				position: "relative",
+			}}
+		>
 			<div
 				style={{
-					background: "#13151a",
-					border: "1px solid #2f3336",
-					borderRadius: "16px",
-					overflow: "hidden",
-					position: "relative",
+					display: "flex",
+					flexDirection: "column",
 				}}
 			>
+				<img
+					src={image}
+					alt=""
+					style={{
+						aspectRatio: "1.91",
+						height: "auto",
+						maxHeight: "310px",
+						objectFit: "cover",
+					}}
+				/>
 				<div
 					style={{
-						display: "flex",
-						flexDirection: "column",
+						border: "0",
+						position: "absolute",
+						bottom: "12px",
+						left: "12px",
+						right: "12px",
+						fontFamily:
+							"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif",
 					}}
 				>
-					<img
-						src={image}
-						alt=""
+					<span
 						style={{
-							aspectRatio: "1.91",
-							height: "auto",
-							maxHeight: "310px",
-							objectFit: "cover",
-						}}
-					/>
-					<div
-						style={{
-							border: "0",
-							position: "absolute",
-							bottom: "12px",
-							left: "12px",
-							right: "12px",
-							fontFamily:
-								"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif",
+							backgroundColor: "rgba(0,0,0,.77)",
+							borderRadius: "4px",
+							color: "#fff",
+							fontSize: "13px",
+							fontWeight: "500",
+							height: "20px",
+							lineHeight: "16px",
+							maxWidth: "100%",
+							overflow: "hidden",
+							padding: "2px 4px",
+							textOverflow: "ellipsis",
+							userSelect: "none",
+							whiteSpace: "nowrap",
+							width: "fit-content",
 						}}
 					>
-						<span
-							style={{
-								backgroundColor: "rgba(0,0,0,.77)",
-								borderRadius: "4px",
-								color: "#fff",
-								fontSize: "13px",
-								fontWeight: "500",
-								height: "20px",
-								lineHeight: "16px",
-								maxWidth: "100%",
-								overflow: "hidden",
-								padding: "2px 4px",
-								textOverflow: "ellipsis",
-								userSelect: "none",
-								whiteSpace: "nowrap",
-								width: "fit-content",
-							}}
-						>
-							{title ?? "Title not provided"}
-						</span>
-					</div>
+						{title ?? "Title not provided"}
+					</span>
 				</div>
 			</div>
-		</PreviewContainer>
+		</div>
 	);
 }
