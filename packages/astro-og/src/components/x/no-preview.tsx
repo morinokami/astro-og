@@ -1,4 +1,4 @@
-import { PreviewContainer } from "./preview-container";
+import { PreviewContainer } from "../preview-container";
 
 export function NoPreview() {
 	return (
