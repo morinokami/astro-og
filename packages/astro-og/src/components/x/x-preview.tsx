@@ -14,6 +14,7 @@ export function XPreview({
 		props["twitter:description"] ??
 		props["og:description"] ??
 		props.description;
+
 	return cardType === undefined ? (
 		<NoPreview />
 	) : cardType === "summary" || image === undefined ? (
