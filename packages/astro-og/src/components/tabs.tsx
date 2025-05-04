@@ -1,4 +1,4 @@
-import type React from "react";
+import type { ComponentChildren } from "preact";
 
 export type Platform = "X" | "Discord";
 
@@ -73,7 +73,7 @@ function TabItem({
 	platform: Platform;
 	selected: boolean;
 	onSelect: (platform: Platform) => void;
-	children: React.ReactNode;
+	children: ComponentChildren;
 }) {
 	return (
 		<button
