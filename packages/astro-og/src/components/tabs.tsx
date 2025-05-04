@@ -15,7 +15,7 @@ export function Tabs({ selectedPlatform, onSelect }: TabsProps) {
 				marginTop: "8px",
 				display: "flex",
 				border: "1px solid rgba(35, 38, 45, 1)",
-				borderRadius: "8px",
+				borderRadius: "6px",
 				padding: "4px",
 				margin: "0 auto",
 			}}
