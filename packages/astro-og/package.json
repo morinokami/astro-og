@@ -1,8 +1,13 @@
 {
 	"name": "astro-og",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "Astro dev toolbar app that previews your page on social platforms and shows its open graph data.",
-	"keywords": ["astro", "withastro", "astro-component", "astro-integration"],
+	"keywords": [
+		"astro",
+		"withastro",
+		"astro-component",
+		"astro-integration"
+	],
 	"author": "Shinya Fujino <shf0811@gmail.com> (https://github.com/morinokami)",
 	"license": "MIT",
 	"type": "module",
@@ -20,7 +25,9 @@
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "tsdown",
 		"typecheck": "tsc --noEmit"
