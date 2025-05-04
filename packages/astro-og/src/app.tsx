@@ -1,10 +1,12 @@
 import { useState } from "preact/hooks";
 
 import { Fragment } from "preact/jsx-runtime";
-import { DiscordPreview } from "./discord/discord-preview";
-import { PropField } from "./prop-field";
-import { type Platform, Tabs } from "./tabs";
-import { XPreview } from "./x/x-preview";
+import { DiscordPreview } from "./components/discord/discord-preview";
+import { PropField } from "./components/prop-field";
+import { type Platform, Tabs } from "./components/tabs";
+import { XPreview } from "./components/x/x-preview";
+
+import "./globals.css";
 
 interface AppProps {
 	cardType?: "summary" | "summary_large_image";

@@ -2,7 +2,7 @@ import type { DevToolbarApp } from "astro";
 import { defineToolbarApp } from "astro/toolbar";
 import { render } from "preact";
 
-import { App } from "./components/app";
+import { App } from "./app";
 import { parse } from "./meta";
 import { closeOnOutsideClick } from "./utils";
 
