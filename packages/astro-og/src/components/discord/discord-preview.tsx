@@ -53,7 +53,9 @@ export function DiscordPreview({ props }: DiscordPreviewProps) {
 							textDecoration: "none",
 						}}
 					>
-						<span style={{ display: "block" }}>{title}</span>
+						<span style={{ display: "block" }}>
+							{title ?? "Title not provided"}
+						</span>
 					</a>
 					<div
 						style={{
@@ -64,24 +66,26 @@ export function DiscordPreview({ props }: DiscordPreviewProps) {
 					>
 						{description}
 					</div>
-					<div style={{ marginTop: "16px" }}>
-						<div style={{ display: "flex", flexDirection: "column" }}>
-							<img
-								src={image}
-								alt=""
-								height={300}
-								style={{
-									borderRadius: "4px",
-									background: "#000",
-									aspectRatio: "400 / 210",
-									height: "auto",
-									maxHeight: "310px",
-									objectFit: "cover",
-									display: "block",
-								}}
-							/>
+					{image && (
+						<div style={{ marginTop: "16px" }}>
+							<div style={{ display: "flex", flexDirection: "column" }}>
+								<img
+									src={image}
+									alt=""
+									height={300}
+									style={{
+										borderRadius: "4px",
+										background: "#000",
+										aspectRatio: "400 / 210",
+										height: "auto",
+										maxHeight: "310px",
+										objectFit: "cover",
+										display: "block",
+									}}
+								/>
+							</div>
 						</div>
-					</div>
+					)}
 				</div>
 			</div>
 		</PreviewContainer>
