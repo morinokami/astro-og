@@ -57,6 +57,25 @@ export function App({ props }: AppProps) {
 							a, a:visited {
 								color: rgba(224, 204, 250, 1);
 							}
+
+							.tab-item {
+								background: rgb(19, 21, 26);
+								color: rgb(161, 161, 161);
+								padding: 8px 12px;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								cursor: pointer;
+								border: none;
+							}
+							.tab-item.selected {
+								background: rgba(71, 78, 94, 1);
+								border-radius: 2px;
+								color: rgb(237, 237, 237);
+							}
+							.tab-item:hover {
+								color: rgb(237, 237, 237);
+							}
 						`}
 			</style>
 			<header>

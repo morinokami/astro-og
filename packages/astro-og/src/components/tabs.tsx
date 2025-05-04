@@ -77,29 +77,12 @@ function TabItem({
 }) {
 	return (
 		<button
+			className={`tab-item ${selected ? "selected" : ""}`}
 			type="button"
 			role="tab"
 			aria-selected={selected}
 			onClick={() => {
 				onSelect(platform);
-			}}
-			style={{
-				background: "rgb(19, 21, 26)",
-				color: "rgb(161, 161, 161)",
-				padding: "8px 12px",
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-				cursor: "pointer",
-				border: "none",
-				...(selected && {
-					background: "rgba(71, 78, 94, 1)",
-					borderRadius: "2px",
-					color: "rgb(237, 237, 237)",
-				}),
-				"&:hover": {
-					color: "rgb(237, 237, 237)",
-				},
 			}}
 		>
 			{children}
