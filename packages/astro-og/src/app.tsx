@@ -6,8 +6,6 @@ import { PropField } from "./components/prop-field";
 import { type Platform, Tabs } from "./components/tabs";
 import { XPreview } from "./components/x/x-preview";
 
-import "./globals.css";
-
 interface AppProps {
 	cardType?: "summary" | "summary_large_image";
 	image?: string;
