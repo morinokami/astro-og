@@ -49,7 +49,6 @@ export function DiscordPreview({ props }: DiscordPreviewProps) {
 							fontWeight: "600",
 							marginTop: "8px",
 							cursor: "pointer",
-							outline: "none",
 							textDecoration: "none",
 						}}
 					>
