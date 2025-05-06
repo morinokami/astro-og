@@ -1,3 +1,4 @@
+import { useState } from "preact/hooks";
 import { PreviewContainer } from "../preview-container";
 
 interface DiscordPreviewProps {
@@ -10,6 +11,8 @@ export function DiscordPreview({ props }: DiscordPreviewProps) {
 	const description = props["og:description"] ?? props.description;
 	const siteName = props["og:site_name"];
 	const url = props["og:url"];
+
+	const [imgError, setImgError] = useState(false);
 
 	return (
 		<PreviewContainer>
@@ -65,7 +68,7 @@ export function DiscordPreview({ props }: DiscordPreviewProps) {
 					>
 						{description}
 					</div>
-					{image && (
+					{image && !imgError && (
 						<div style={{ marginTop: "16px" }}>
 							<div style={{ display: "flex", flexDirection: "column" }}>
 								<img
@@ -81,6 +84,7 @@ export function DiscordPreview({ props }: DiscordPreviewProps) {
 										objectFit: "cover",
 										display: "block",
 									}}
+									onError={() => setImgError(true)}
 								/>
 							</div>
 						</div>

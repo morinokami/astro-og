@@ -1,4 +1,5 @@
-// TODO: Add "From: https://example.com" below the image
+import { useState } from "preact/hooks";
+import { PreviewSummary } from "./preview-summary";
 
 interface PreviewSummaryLargeImageProps {
 	image: string;
@@ -11,7 +12,9 @@ export function PreviewSummaryLargeImage({
 	title,
 	hostname,
 }: PreviewSummaryLargeImageProps) {
-	return (
+	const [imgError, setImgError] = useState(false);
+
+	return !imgError ? (
 		<>
 			<div
 				id="panel-X"
@@ -40,6 +43,7 @@ export function PreviewSummaryLargeImage({
 							maxHeight: "310px",
 							objectFit: "cover",
 						}}
+						onError={() => setImgError(true)}
 					/>
 					<div
 						style={{
@@ -88,5 +92,12 @@ export function PreviewSummaryLargeImage({
 				From: {hostname}
 			</span>
 		</>
+	) : (
+		<PreviewSummary
+			image={image}
+			title={title}
+			hostname={hostname}
+			isFallback={true}
+		/>
 	);
 }

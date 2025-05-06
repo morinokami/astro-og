@@ -62,7 +62,6 @@ export function App({ props }: AppProps) {
 							.tab-item {
 								background: rgb(19, 21, 26);
 								color: rgb(161, 161, 161);
-								margin: 0px 2px;
 								padding: 8px 12px;
 								display: flex;
 								align-items: center;
@@ -91,6 +90,7 @@ export function App({ props }: AppProps) {
 				onSelect={setSelectedPlatform}
 			/>
 
+			{/* TODO: Keep the previews mounted even if the platform is not selected */}
 			{selectedPlatform === "X" ? (
 				<XPreview props={props} />
 			) : selectedPlatform === "Bluesky" ? (
