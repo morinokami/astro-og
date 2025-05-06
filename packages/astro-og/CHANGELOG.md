@@ -1,5 +1,11 @@
 # astro-og
 
+## 0.2.1
+
+### Patch Changes
+
+- [#14](https://github.com/morinokami/astro-og/pull/14) [`0c822d1`](https://github.com/morinokami/astro-og/commit/0c822d159949fe0b1fe124ecee5c7fdcfe4ce098) Thanks [@morinokami](https://github.com/morinokami)! - Display the From section for X preview
+
 ## 0.2.0
 
 ### Minor Changes
