@@ -3,6 +3,7 @@ import { useState } from "preact/hooks";
 import { Fragment } from "preact/jsx-runtime";
 import { BlueskyPreview } from "./components/bluesky/bluesky-preview";
 import { DiscordPreview } from "./components/discord/discord-preview";
+import { PreviewContainer } from "./components/preview-container";
 import { PropField } from "./components/prop-field";
 import { type Platform, Tabs } from "./components/tabs";
 import { XPreview } from "./components/x/x-preview";
@@ -89,15 +90,34 @@ export function App({ props }: AppProps) {
 				selectedPlatform={selectedPlatform}
 				onSelect={setSelectedPlatform}
 			/>
-
-			{/* TODO: Keep the previews mounted even if the platform is not selected */}
-			{selectedPlatform === "X" ? (
-				<XPreview props={props} />
-			) : selectedPlatform === "Bluesky" ? (
-				<BlueskyPreview props={props} />
-			) : selectedPlatform === "Discord" ? (
-				<DiscordPreview props={props} />
-			) : null}
+			<PreviewContainer>
+				<>
+					<div
+						id="panel-X"
+						role="tabpanel"
+						aria-labelledby="tab-X"
+						hidden={selectedPlatform !== "X"}
+					>
+						<XPreview props={props} />
+					</div>
+					<div
+						id="panel-Bluesky"
+						role="tabpanel"
+						aria-labelledby="tab-Bluesky"
+						hidden={selectedPlatform !== "Bluesky"}
+					>
+						<BlueskyPreview props={props} />
+					</div>
+					<div
+						id="panel-Discord"
+						role="tabpanel"
+						aria-labelledby="tab-Discord"
+						hidden={selectedPlatform !== "Discord"}
+					>
+						<DiscordPreview props={props} />
+					</div>
+				</>
+			</PreviewContainer>
 
 			{Object.entries(props).map(([key, value]) => {
 				if (selectedPlatform !== "X" && key.startsWith("twitter:")) {

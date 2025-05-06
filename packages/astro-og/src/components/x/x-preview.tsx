@@ -1,5 +1,4 @@
 import { getHostname } from "../../utils";
-import { PreviewContainer } from "../preview-container";
 import { NoPreview } from "./no-preview";
 import { PreviewSummary } from "./preview-summary";
 import { PreviewSummaryLargeImage } from "./preview-summary-large-image";
@@ -22,24 +21,16 @@ export function XPreview({
 	// this app does not have access to the actual URL of the page.
 	const hostname = getHostname(url ?? "");
 
-	return (
-		<PreviewContainer>
-			{cardType === undefined ? (
-				<NoPreview />
-			) : cardType === "summary" || image === undefined ? (
-				<PreviewSummary
-					image={image}
-					title={title}
-					description={description}
-					hostname={hostname}
-				/>
-			) : (
-				<PreviewSummaryLargeImage
-					image={image}
-					title={title}
-					hostname={hostname}
-				/>
-			)}
-		</PreviewContainer>
+	return cardType === undefined ? (
+		<NoPreview />
+	) : cardType === "summary" || image === undefined ? (
+		<PreviewSummary
+			image={image}
+			title={title}
+			description={description}
+			hostname={hostname}
+		/>
+	) : (
+		<PreviewSummaryLargeImage image={image} title={title} hostname={hostname} />
 	);
 }

@@ -17,9 +17,6 @@ export function PreviewSummaryLargeImage({
 	return !imgError ? (
 		<>
 			<div
-				id="panel-X"
-				role="tabpanel"
-				aria-labelledby="tab-X"
 				style={{
 					background: "#13151a",
 					border: "1px solid #2f3336",
