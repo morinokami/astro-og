@@ -32,3 +32,7 @@ export function isValidUrl(value?: string): value is string {
 		return false;
 	}
 }
+
+export function getHostname(url: string) {
+	return isValidUrl(url) ? new URL(url).hostname : location.hostname;
+}
