@@ -1,3 +1,5 @@
+import { useState } from "preact/hooks";
+
 import { getHostname } from "../../utils";
 import { PreviewContainer } from "../preview-container";
 
@@ -13,6 +15,8 @@ export function BlueskyPreview({ props }: BlueskyPreviewProps) {
 
 	const hostname = getHostname(url ?? "");
 
+	const [imgError, setImgError] = useState(false);
+
 	return (
 		<PreviewContainer>
 			<div
@@ -27,29 +31,32 @@ export function BlueskyPreview({ props }: BlueskyPreviewProps) {
 					overflow: "hidden",
 				}}
 			>
-				<div
-					style={{
-						overflow: "hidden",
-						aspectRatio: "1.91 / 1",
-						position: "relative",
-					}}
-				>
-					<div>
-						<img
-							src={image}
-							alt=""
-							style={{
-								objectPosition: "left 50% top 50%",
-								width: "100%",
-								height: "100%",
-								position: "absolute",
-								left: "0px",
-								top: "0px",
-								objectFit: "cover",
-							}}
-						/>
+				{image && !imgError && (
+					<div
+						style={{
+							overflow: "hidden",
+							aspectRatio: "1.91 / 1",
+							position: "relative",
+						}}
+					>
+						<div>
+							<img
+								src={image}
+								alt=""
+								style={{
+									objectPosition: "left 50% top 50%",
+									width: "100%",
+									height: "100%",
+									position: "absolute",
+									left: "0px",
+									top: "0px",
+									objectFit: "cover",
+								}}
+								onError={() => setImgError(true)}
+							/>
+						</div>
 					</div>
-				</div>
+				)}
 				<div
 					style={{
 						display: "flex",
@@ -57,9 +64,12 @@ export function BlueskyPreview({ props }: BlueskyPreviewProps) {
 						flex: "1 1 0%",
 						paddingTop: "8px",
 						gap: "3px",
-						borderTopWidth: "1px",
-						borderColor: "rgb(46, 64, 82)",
-						borderTopStyle: "solid",
+						...(image &&
+							!imgError && {
+								borderTopWidth: "1px",
+								borderColor: "rgb(46, 64, 82)",
+								borderTopStyle: "solid",
+							}),
 					}}
 				>
 					<div

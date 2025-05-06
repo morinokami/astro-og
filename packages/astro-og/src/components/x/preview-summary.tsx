@@ -1,8 +1,11 @@
+import { useState } from "preact/hooks";
+
 interface PreviewSummaryProps {
 	image?: string;
 	title?: string;
 	description?: string;
 	hostname: string;
+	isFallback?: boolean;
 }
 
 export function PreviewSummary({
@@ -10,7 +13,10 @@ export function PreviewSummary({
 	title,
 	description,
 	hostname,
+	isFallback = false,
 }: PreviewSummaryProps) {
+	const [imgError, setImgError] = useState(false);
+
 	return (
 		<div
 			id="panel-X"
@@ -46,20 +52,37 @@ export function PreviewSummary({
 					flexDirection: "column",
 				}}
 			>
-				<img
-					src={image ?? ""} // TODO: Show fallback image if image not loaded
-					alt=""
-					style={{
-						height: "100%",
-						left: "0",
-						objectFit: "cover",
-						position: "absolute",
-						top: "0",
-						width: "100%",
-						aspectRatio: "16 / 9",
-						maxHeight: "310px",
-					}}
-				/>
+				{isFallback || !image || imgError ? (
+					<svg
+						viewBox="0 0 24 24"
+						style={{
+							color: "#71767b",
+							height: "2em",
+							fill: "currentColor",
+						}}
+					>
+						<title>Image not available</title>
+						<g>
+							<path d="M1.998 5.5c0-1.38 1.119-2.5 2.5-2.5h15c1.381 0 2.5 1.12 2.5 2.5v13c0 1.38-1.119 2.5-2.5 2.5h-15c-1.381 0-2.5-1.12-2.5-2.5v-13zm2.5-.5c-.276 0-.5.22-.5.5v13c0 .28.224.5.5.5h15c.276 0 .5-.22.5-.5v-13c0-.28-.224-.5-.5-.5h-15zM6 7h6v6H6V7zm2 2v2h2V9H8zm10 0h-4V7h4v2zm0 4h-4v-2h4v2zm-.002 4h-12v-2h12v2z" />
+						</g>
+					</svg>
+				) : (
+					<img
+						src={image ?? ""}
+						alt=""
+						style={{
+							height: "100%",
+							left: "0",
+							objectFit: "cover",
+							position: "absolute",
+							top: "0",
+							width: "100%",
+							aspectRatio: "16 / 9",
+							maxHeight: "310px",
+						}}
+						onError={() => setImgError(true)}
+					/>
+				)}
 			</div>
 			<div
 				style={{
