@@ -18,6 +18,8 @@ export function XPreview({
 		props.description;
 	const url = props["og:url"];
 
+	// This is not how X does it, but it's the best we can do for now because
+	// this app does not have access to the actual URL of the page.
 	const hostname = getHostname(url ?? "");
 
 	return (
