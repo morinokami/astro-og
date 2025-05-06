@@ -2,12 +2,14 @@ interface PreviewSummaryProps {
 	image?: string;
 	title?: string;
 	description?: string;
+	hostname: string;
 }
 
 export function PreviewSummary({
 	image,
 	title,
 	description,
+	hostname,
 }: PreviewSummaryProps) {
 	return (
 		<div
@@ -78,7 +80,7 @@ export function PreviewSummary({
 						color: "#71767b",
 					}}
 				>
-					{document.location.host}
+					{hostname}
 				</span>
 				<div style={{ flexShrink: "0" }}>
 					<span

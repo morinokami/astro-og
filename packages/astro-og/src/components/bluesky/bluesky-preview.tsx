@@ -1,4 +1,4 @@
-import { isValidUrl } from "../../utils";
+import { getHostname } from "../../utils";
 import { PreviewContainer } from "../preview-container";
 
 interface BlueskyPreviewProps {
@@ -11,7 +11,7 @@ export function BlueskyPreview({ props }: BlueskyPreviewProps) {
 	const description = props["og:description"] ?? props.description;
 	const url = props["og:url"];
 
-	const hostname = isValidUrl(url) ? new URL(url).hostname : location.hostname;
+	const hostname = getHostname(url ?? "");
 
 	return (
 		<PreviewContainer>
