@@ -1,3 +1,4 @@
+import { getHostname } from "../../utils";
 import { PreviewContainer } from "../preview-container";
 import { NoPreview } from "./no-preview";
 import { PreviewSummary } from "./preview-summary";
@@ -15,15 +16,27 @@ export function XPreview({
 		props["twitter:description"] ??
 		props["og:description"] ??
 		props.description;
+	const url = props["og:url"];
+
+	const hostname = getHostname(url ?? "");
 
 	return (
 		<PreviewContainer>
 			{cardType === undefined ? (
 				<NoPreview />
 			) : cardType === "summary" || image === undefined ? (
-				<PreviewSummary image={image} title={title} description={description} />
+				<PreviewSummary
+					image={image}
+					title={title}
+					description={description}
+					hostname={hostname}
+				/>
 			) : (
-				<PreviewSummaryLargeImage image={image} title={title} />
+				<PreviewSummaryLargeImage
+					image={image}
+					title={title}
+					hostname={hostname}
+				/>
 			)}
 		</PreviewContainer>
 	);
