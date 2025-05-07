@@ -5,6 +5,7 @@ import { BlueskyPreview } from "./components/bluesky/bluesky-preview";
 import { DiscordPreview } from "./components/discord/discord-preview";
 import { PreviewContainer } from "./components/preview-container";
 import { PropField } from "./components/prop-field";
+import { SlackPreview } from "./components/slack/slack-preview";
 import { type Platform, Tabs } from "./components/tabs";
 import { XPreview } from "./components/x/x-preview";
 
@@ -115,6 +116,14 @@ export function App({ props }: AppProps) {
 						hidden={selectedPlatform !== "Discord"}
 					>
 						<DiscordPreview props={props} />
+					</div>
+					<div
+						id="panel-Slack"
+						role="tabpanel"
+						aria-labelledby="tab-Slack"
+						hidden={selectedPlatform !== "Slack"}
+					>
+						<SlackPreview props={props} />
 					</div>
 				</>
 			</PreviewContainer>
