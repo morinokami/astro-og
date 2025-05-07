@@ -1,5 +1,13 @@
 # astro-og
 
+## 0.2.2
+
+### Patch Changes
+
+- [#16](https://github.com/morinokami/astro-og/pull/16) [`1bacc9f`](https://github.com/morinokami/astro-og/commit/1bacc9f3841a8d52ba3c1d2b09c9241342eea84b) Thanks [@morinokami](https://github.com/morinokami)! - Handle cases where images fail to load
+
+- [#18](https://github.com/morinokami/astro-og/pull/18) [`92f7fa6`](https://github.com/morinokami/astro-og/commit/92f7fa6d88286d4f196ad8a62209e4e1a53577ab) Thanks [@morinokami](https://github.com/morinokami)! - Keep previews mounted even if not selected
+
 ## 0.2.1
 
 ### Patch Changes
