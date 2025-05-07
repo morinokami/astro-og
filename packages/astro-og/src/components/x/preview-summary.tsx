@@ -19,9 +19,6 @@ export function PreviewSummary({
 
 	return (
 		<div
-			id="panel-X"
-			role="tabpanel"
-			aria-labelledby="tab-X"
 			style={{
 				display: "flex",
 				border: "1px solid #2f3336",

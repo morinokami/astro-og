@@ -1,9 +1,6 @@
 export function NoPreview() {
 	return (
 		<div
-			id="panel-X"
-			role="tabpanel"
-			aria-labelledby="tab-X"
 			style={{
 				display: "flex",
 				flexDirection: "column",
