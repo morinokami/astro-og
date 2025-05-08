@@ -1,4 +1,5 @@
 import { useState } from "preact/hooks";
+
 import { getHostname } from "../../utils";
 
 interface SlackPreviewProps {
