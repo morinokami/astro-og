@@ -1,6 +1,6 @@
 {
 	"name": "astro-og",
-	"version": "0.2.2",
+	"version": "0.3.0",
 	"description": "Astro dev toolbar app that previews your page on social platforms and shows its open graph data.",
 	"keywords": [
 		"astro",
