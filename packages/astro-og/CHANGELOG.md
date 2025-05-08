@@ -1,5 +1,11 @@
 # astro-og
 
+## 0.3.0
+
+### Minor Changes
+
+- [#19](https://github.com/morinokami/astro-og/pull/19) [`efd0a45`](https://github.com/morinokami/astro-og/commit/efd0a45123aae3e10280883bec735ac4780c5b96) Thanks [@morinokami](https://github.com/morinokami)! - Add Slack support
+
 ## 0.2.2
 
 ### Patch Changes
