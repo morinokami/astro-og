@@ -93,7 +93,7 @@ export function SlackPreview({ props }: SlackPreviewProps) {
 								border: "1px solid #222",
 								borderRadius: "8px",
 								width: "100%",
-								aspectRatio: "16 / 9",
+								aspectRatio: "40 / 21",
 								height: "auto",
 								maxHeight: "310px",
 								objectFit: "cover",
