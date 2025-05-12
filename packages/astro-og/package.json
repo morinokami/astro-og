@@ -36,7 +36,7 @@
 		"preact": "10.26.5"
 	},
 	"devDependencies": {
-		"@types/node": "22.15.3",
+		"@types/node": "22.15.17",
 		"astro": "5.7.10",
 		"publint": "0.3.12",
 		"tsdown": "0.10.2",
