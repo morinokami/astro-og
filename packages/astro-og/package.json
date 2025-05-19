@@ -30,7 +30,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "22.15.3",
-		"astro": "5.7.12",
+		"astro": "5.7.13",
 		"publint": "0.3.12",
 		"tsdown": "0.11.11",
 		"typescript": "5.8.3"
