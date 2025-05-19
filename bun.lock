@@ -12,7 +12,7 @@
     },
     "packages/astro-og": {
       "name": "astro-og",
-      "version": "0.2.0",
+      "version": "0.2.2",
       "dependencies": {
         "preact": "10.26.5",
       },
