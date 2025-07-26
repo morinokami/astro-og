@@ -26,13 +26,13 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"preact": "10.26.8"
+		"preact": "10.26.9"
 	},
 	"devDependencies": {
-		"@types/node": "22.15.29",
-		"astro": "5.8.1",
+		"@types/node": "22.16.5",
+		"astro": "5.12.3",
 		"publint": "0.3.12",
-		"tsdown": "0.12.7",
+		"tsdown": "0.13.0",
 		"typescript": "5.8.3"
 	},
 	"peerDependencies": {
