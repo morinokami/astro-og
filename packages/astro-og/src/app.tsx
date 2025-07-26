@@ -92,6 +92,7 @@ export function App({ props }: AppProps) {
 				onSelect={setSelectedPlatform}
 			/>
 			<PreviewContainer>
+				{/** biome-ignore lint/complexity/noUselessFragments: explanation */}
 				<>
 					<div
 						id="panel-X"
