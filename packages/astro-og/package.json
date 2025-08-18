@@ -32,7 +32,7 @@
 		"@types/node": "22.16.5",
 		"astro": "5.12.8",
 		"publint": "0.3.12",
-		"tsdown": "0.13.4",
+		"tsdown": "0.14.1",
 		"typescript": "5.9.2"
 	},
 	"peerDependencies": {
