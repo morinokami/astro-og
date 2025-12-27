@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "astro": "5.16.6",
-    "astro-dev-toolbar-showcase": "0.0.1",
+    "astro-dev-toolbar-showcase": "0.0.2",
     "astro-mcp": "0.4.2",
     "astro-og": "workspace:*"
   }
