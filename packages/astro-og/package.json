@@ -37,7 +37,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "24.10.4",
-		"@typescript/native-preview": "7.0.0-dev.20251227.1",
+		"@typescript/native-preview": "7.0.0-dev.20251229.1",
 		"astro": "5.16.6",
 		"publint": "0.3.16",
 		"tsdown": "0.18.3"
