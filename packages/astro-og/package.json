@@ -33,14 +33,14 @@
 		"typecheck": "tsgo --noEmit"
 	},
 	"dependencies": {
-		"preact": "10.28.1"
+		"preact": "10.28.2"
 	},
 	"devDependencies": {
 		"@types/node": "24.10.4",
-		"@typescript/native-preview": "7.0.0-dev.20260109.1",
-		"astro": "5.16.6",
+		"@typescript/native-preview": "7.0.0-dev.20260115.1",
+		"astro": "5.16.9",
 		"publint": "0.3.16",
-		"tsdown": "0.18.4"
+		"tsdown": "0.20.0-beta.3"
 	},
 	"peerDependencies": {
 		"astro": ">=5.0.0"
