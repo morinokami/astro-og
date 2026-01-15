@@ -1,5 +1,11 @@
 # astro-og
 
+## 0.3.2
+
+### Patch Changes
+
+- [#145](https://github.com/morinokami/astro-og/pull/145) [`e7c6b88`](https://github.com/morinokami/astro-og/commit/e7c6b88c2af8974d8a54154ec76c1add3e8d6c47) Thanks [@morinokami](https://github.com/morinokami)! - Update dependencies
+
 ## 0.3.1
 
 ### Patch Changes
